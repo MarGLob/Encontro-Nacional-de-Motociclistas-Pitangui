@@ -624,8 +624,8 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     /* --- CORREÇÃO DO FORMULÁRIO PARA NÃO ROLAR LATERALMENTE --- */
     .card-float {
         transform: none !important; /* Remove rotação */
-        margin: 40px 0 !important;
-        width: 100% !important;
+        margin: 20px 0 !important;
+        width: 110% !important;
         max-width: 100% !important;
         padding: 20px 15px !important;
         box-shadow: none !important;
@@ -653,5 +653,6 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         padding: 10px;
     }
 }
+
 
 
