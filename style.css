@@ -158,7 +158,7 @@ body {
 .bar { display: block; width: 25px; height: 3px; background: white; margin: 5px auto; }
 
 /* =========================================
-   5. HERO SECTION (ATUALIZADO)
+   5. HERO SECTION
    ========================================= */
 .hero-section {
     height: 100vh;
@@ -613,7 +613,7 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         height: auto;
         min-height: 100vh;
         /* Adiciona espaço extra no topo para o menu não cobrir o logo da Caxuxa */
-        padding-top: 100px;
+        padding-top: 120px;
         padding-bottom: 50px;
     }
 
@@ -639,12 +639,15 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     .sponsor-label { font-size: 1rem; }
     .gold-grid .sponsor-item img { height: 60px; }
     
-    /* --- CORREÇÃO DO FORMULÁRIO (100% Celular) --- */
+    /* --- CORREÇÃO DO FORMULÁRIO (100% Celular + Largo) --- */
     .card-float {
         transform: none !important; /* Remove rotação */
-        margin: 20px 0 !important;  /* Margem vertical apenas */
-        width: 100% !important;     /* Largura total */
-        max-width: 100% !important;
+        
+        /* Margem negativa lateral (-10px) para alargar o quadro */
+        margin: 20px -10px !important; 
+        
+        width: auto !important;     /* Auto para respeitar a margem negativa */
+        max-width: none !important;
         padding: 20px 15px !important;
         box-shadow: none !important;
         
