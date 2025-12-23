@@ -629,7 +629,9 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         max-width: 100% !important;
         padding: 20px 15px !important;
         box-shadow: none !important;
-        border-radius: 0;
+         border: 2px solid var(--primary); /* Exemplo: Borda Laranja */
+        border-radius: 10px !important;   /* Exemplo: Cantos arredondados */    }
+
     }
 
     .form-container-custom { padding: 0 !important; }
@@ -651,3 +653,4 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         padding: 10px;
     }
 }
+
