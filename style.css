@@ -639,7 +639,7 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     .sponsor-label { font-size: 1rem; }
     .gold-grid .sponsor-item img { height: 60px; }
     
-    /* --- CORREÇÃO DO FORMULÁRIO (100% Celular + Largo) --- */
+    /* --- CORREÇÃO DO FORMULÁRIO (100% Celular + Largo + Mais Espaço Interno) --- */
     .card-float {
         transform: none !important; /* Remove rotação */
         
@@ -648,7 +648,10 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         
         width: auto !important;     /* Auto para respeitar a margem negativa */
         max-width: none !important;
-        padding: 20px 15px !important;
+        
+        /* Padding base da caixa (borda) */
+        padding: 0 !important; 
+        
         box-shadow: none !important;
         
         /* Borda e Arredondamento */
@@ -656,7 +659,11 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         border-radius: 10px !important;
     }
 
-    .form-container-custom { padding: 0 !important; }
+    /* AQUI ESTAVA O PROBLEMA: Estava padding: 0 !important */
+    /* Agora aplica o padding interno para o texto não colar na borda */
+    .form-container-custom { 
+        padding: 25px !important; 
+    }
 
     /* Coloca os campos um embaixo do outro */
     .mc-form .form-grid {
