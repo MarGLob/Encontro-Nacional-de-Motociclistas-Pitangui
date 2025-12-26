@@ -600,7 +600,27 @@ body {
 footer { background: black; padding: 40px; text-align: center; border-top: 1px solid #222; color: #666; }
 
 /* =========================================
-   14. RESPONSIVIDADE (MOBILE)
+   14. NOVO: SEÇÃO DE ORGANIZADORES
+   ========================================= */
+.organizers-bar {
+    background: #000;
+    padding: 40px 0;
+    border-top: 1px solid #222;
+}
+
+.organizer-logo {
+    height: 100px; /* Um pouco maior que os patrocinadores comuns */
+    width: auto;
+    filter: grayscale(0%); /* Mantém colorido */
+    transition: transform 0.3s;
+}
+
+.organizer-logo:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   15. RESPONSIVIDADE (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
     /* Menu Mobile */
@@ -639,6 +659,9 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     .sponsor-label { font-size: 1rem; }
     .gold-grid .sponsor-item img { height: 60px; }
     
+    /* Ajuste Organizadores Mobile */
+    .organizer-logo { height: 80px; }
+    
     /* --- CORREÇÃO DO FORMULÁRIO (100% Celular + Largo + Mais Espaço Interno) --- */
     .card-float {
         transform: none !important; /* Remove rotação */
@@ -659,7 +682,6 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         border-radius: 10px !important;
     }
 
-    /* AQUI ESTAVA O PROBLEMA: Estava padding: 0 !important */
     /* Agora aplica o padding interno para o texto não colar na borda */
     .form-container-custom { 
         padding: 25px !important; 
