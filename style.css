@@ -709,4 +709,10 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         font-size: 0.9rem;
         padding: 10px;
     }
+
+    /* Botão de inscrição arredondado no mobile */
+    #submitBtn {
+        clip-path: none !important;
+        border-radius: 30px !important;
+    }
 }
