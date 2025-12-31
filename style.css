@@ -191,7 +191,7 @@ body {
 
 /* === MUDANÇA 1: LOGO DO HERO MAIOR E COM MAIS BRILHO === */
 .presenter-logo {
-    height: 150px; /* Aumentado de 80px para 150px (bem maior) */
+    height: 170px; /* Aumentado de 80px para 150px (bem maior) */
     width: auto;
     /* Sombra branca mais forte para destacar no fundo escuro */
     filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.5));
@@ -651,7 +651,7 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
 
     /* === MUDANÇA 2: LOGO DO HERO TAMBÉM MAIOR NO CELULAR === */
     .presenter-logo {
-        height: 100px; /* Aumentado de 60px para 100px */
+        height: 200px; /* Aumentado de 60px para 100px */
     }
     
     /* Layouts quebram para coluna */
@@ -724,3 +724,4 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         border-radius: 30px !important;
     }
 }
+
