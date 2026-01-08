@@ -158,10 +158,13 @@ body {
 .bar { display: block; width: 25px; height: 3px; background: white; margin: 5px auto; }
 
 /* =========================================
-   5. HERO SECTION
+   5. HERO SECTION (CORREÇÃO DESKTOP E MOBILE)
    ========================================= */
 .hero-section {
-    height: 100vh;
+    /* "min-height" permite crescer se o conteúdo for maior que a tela no PC */
+    min-height: 100vh;
+    height: auto; 
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,6 +172,10 @@ body {
     position: relative;
     /* Imagem local pit.jpeg */
     background: url('pit.jpeg') center/cover no-repeat fixed;
+    
+    /* Espaço para não cortar conteúdo no topo (atrás do menu) e embaixo */
+    padding-top: 120px; 
+    padding-bottom: 80px;
 }
 
 .hero-overlay {
@@ -178,7 +185,7 @@ body {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
 }
 
-.hero-content { position: relative; z-index: 1; margin-top: 40px; }
+.hero-content { position: relative; z-index: 1; }
 
 /* Box do Apresentador (Caxuxa) */
 .presenter-box {
@@ -189,13 +196,13 @@ body {
     gap: 5px;
 }
 
-/* === MUDANÇA 1: LOGO DO HERO MAIOR E COM MAIS BRILHO === */
+/* === LOGO DO HERO MAIOR === */
 .presenter-logo {
-    height: 170px; /* Aumentado de 80px para 150px (bem maior) */
+    height: 150px; /* Grande no desktop */
     width: auto;
-    /* Sombra branca mais forte para destacar no fundo escuro */
+    /* Sombra branca mais forte */
     filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.5));
-    transition: transform 0.3s ease; /* Animação suave */
+    transition: transform 0.3s ease; 
 }
 
 .presenter-logo:hover {
@@ -634,7 +641,7 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     .nav-links { display: none; }
     .menu-toggle { display: block; }
     
-    /* Hero Adjustments - CORREÇÃO DE SOBREPOSIÇÃO */
+    /* Hero Adjustments - CORREÇÃO DE SOBREPOSIÇÃO NO MOBILE */
     .hero-section {
         /* Permite que a altura cresça conforme o conteúdo */
         height: auto;
@@ -649,9 +656,9 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         margin-top: 10px;
     }
 
-    /* === MUDANÇA 2: LOGO DO HERO TAMBÉM MAIOR NO CELULAR === */
+    /* === LOGO HERO NO MOBILE === */
     .presenter-logo {
-        height: 200px; /* Aumentado de 60px para 100px */
+        height: 100px; /* Ajustado para mobile */
     }
     
     /* Layouts quebram para coluna */
@@ -724,4 +731,3 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         border-radius: 30px !important;
     }
 }
-
