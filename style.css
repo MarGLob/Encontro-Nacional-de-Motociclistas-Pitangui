@@ -158,22 +158,17 @@ body {
 .bar { display: block; width: 25px; height: 3px; background: white; margin: 5px auto; }
 
 /* =========================================
-   5. HERO SECTION (CORREÇÃO DESKTOP E MOBILE)
+   5. HERO SECTION
    ========================================= */
 .hero-section {
-    /* "min-height" permite crescer se o conteúdo for maior que a tela no PC */
     min-height: 100vh;
     height: auto; 
-    
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    /* Imagem local pit.jpeg */
     background: url('pit.jpeg') center/cover no-repeat fixed;
-    
-    /* Espaço para não cortar conteúdo no topo (atrás do menu) e embaixo */
     padding-top: 120px; 
     padding-bottom: 80px;
 }
@@ -181,13 +176,11 @@ body {
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    /* Escurecido um pouco mais (0.7 a 0.9) para garantir leitura */
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
 }
 
 .hero-content { position: relative; z-index: 1; }
 
-/* Box do Apresentador (Caxuxa) */
 .presenter-box {
     margin-bottom: 20px;
     display: flex;
@@ -196,18 +189,14 @@ body {
     gap: 5px;
 }
 
-/* === LOGO DO HERO MAIOR === */
 .presenter-logo {
-    height: 150px; /* Grande no desktop */
+    height: 150px;
     width: auto;
-    /* Sombra branca mais forte */
     filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.5));
     transition: transform 0.3s ease; 
 }
 
-.presenter-logo:hover {
-    transform: scale(1.05); /* Cresce levemente ao passar o mouse */
-}
+.presenter-logo:hover { transform: scale(1.05); }
 
 .presenter-text {
     font-family: var(--font-display);
@@ -328,6 +317,7 @@ body {
 
 .bands-grid {
     display: grid;
+    /* Padrão para PC: Responsivo automático */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
@@ -575,13 +565,13 @@ body {
 
 .mc-form input, .mc-form textarea {
     width: 100%;
-    padding: 12px; /* Padrão Desktop */
+    padding: 12px;
     background: #222;
     border: 1px solid #444;
     color: white;
     font-family: var(--font-main);
     border-radius: 4px;
-    box-sizing: border-box; /* Garante tamanho correto */
+    box-sizing: border-box; 
 }
 
 .mc-form input:focus, .mc-form textarea:focus {
@@ -623,9 +613,9 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
 }
 
 .organizer-logo {
-    height: 100px; /* Um pouco maior que os patrocinadores comuns */
+    height: 100px;
     width: auto;
-    filter: grayscale(0%); /* Mantém colorido */
+    filter: grayscale(0%);
     transition: transform 0.3s;
 }
 
@@ -637,16 +627,12 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
    15. RESPONSIVIDADE (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
-    /* Menu Mobile */
     .nav-links { display: none; }
     .menu-toggle { display: block; }
     
-    /* Hero Adjustments - CORREÇÃO DE SOBREPOSIÇÃO NO MOBILE */
     .hero-section {
-        /* Permite que a altura cresça conforme o conteúdo */
         height: auto;
         min-height: 100vh;
-        /* Adiciona espaço extra no topo para o menu não cobrir o logo da Caxuxa */
         padding-top: 120px;
         padding-bottom: 50px;
     }
@@ -656,12 +642,8 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         margin-top: 10px;
     }
 
-    /* === LOGO HERO NO MOBILE === */
-    .presenter-logo {
-        height: 100px; /* Ajustado para mobile */
-    }
+    .presenter-logo { height: 100px; }
     
-    /* Layouts quebram para coluna */
     .grid-2, .flex-row { 
         grid-template-columns: 1fr;
         flex-direction: column; 
@@ -669,40 +651,58 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     
     .cta-box { padding: 40px; }
 
-    /* Ajustes Patrocinadores */
     .master-logo { height: 40px; }
     .sponsor-label { font-size: 1rem; }
     .gold-grid .sponsor-item img { height: 60px; }
     
-    /* Ajuste Organizadores Mobile */
     .organizer-logo { height: 80px; }
     
-    /* --- CORREÇÃO DO FORMULÁRIO (100% Celular + Largo + Mais Espaço Interno) --- */
+    /* --- GRID DUPLO DE BANDAS NO MOBILE --- */
+    .bands-grid {
+        grid-template-columns: 1fr 1fr !important; /* Força 2 colunas */
+        gap: 15px; /* Espaço menor entre os cards */
+    }
+
+    /* Ajustes para os cards caberem bem em 2 colunas */
+    .rock-img-box {
+        height: 140px; /* Imagem um pouco mais baixa */
+    }
+    
+    .rock-content {
+        padding: 10px; /* Menos espaçamento interno */
+    }
+    
+    .rock-content h3 {
+        font-size: 1.1rem; /* Fonte do nome da banda menor */
+    }
+    
+    .rock-content p {
+        font-size: 0.8rem; /* Descrição menor */
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+    
+    .rock-time {
+        font-size: 0.9rem;
+        padding: 2px 10px;
+    }
+
+    /* --- CORREÇÃO DO FORMULÁRIO --- */
     .card-float {
-        transform: none !important; /* Remove rotação */
-        
-        /* Margem negativa lateral (-10px) para alargar o quadro */
+        transform: none !important;
         margin: 20px -10px !important; 
-        
-        width: auto !important;     /* Auto para respeitar a margem negativa */
+        width: auto !important;
         max-width: none !important;
-        
-        /* Padding base da caixa (borda) */
         padding: 0 !important; 
-        
         box-shadow: none !important;
-        
-        /* Borda e Arredondamento */
         border: 2px solid var(--primary); 
         border-radius: 10px !important;
     }
 
-    /* Agora aplica o padding interno para o texto não colar na borda */
     .form-container-custom { 
         padding: 25px !important; 
     }
 
-    /* Coloca os campos um embaixo do outro */
     .mc-form .form-grid {
         grid-template-columns: 1fr !important;
         gap: 15px;
@@ -713,7 +713,6 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         width: 100%;
     }
     
-    /* Ajuste de altura dos inputs no mobile */
     .mc-form input, .mc-form textarea {
         padding: 8px !important;
     }
@@ -725,7 +724,6 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         padding: 10px;
     }
 
-    /* Botão de inscrição arredondado no mobile */
     #submitBtn {
         clip-path: none !important;
         border-radius: 30px !important;
