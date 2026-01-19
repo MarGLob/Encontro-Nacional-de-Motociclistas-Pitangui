@@ -83,6 +83,13 @@ body {
     clip-path: polygon(5% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 20%);
 }
 
+/* Estilo para botões menores (usado no flyer) */
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 30px; /* Arredondado padrão */
+}
+
 .link-btn {
     background: none;
     border: none;
@@ -290,6 +297,24 @@ body {
     height: 50px;
     width: auto;
     filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.2));
+}
+
+/* =========================================
+   NOVO: BARRA DE DOWNLOAD DO FLYER
+   ========================================= */
+.flyer-bar {
+    background-color: #1a1a1a; /* Fundo escuro sutil para separar */
+    padding: 30px 0;
+    border-bottom: 1px solid #333;
+}
+
+.flyer-text {
+    margin-bottom: 15px; 
+    color: #ccc; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 /* =========================================
@@ -644,12 +669,32 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
 
     .presenter-logo { height: 100px; }
     
+    /* Layouts quebram para coluna */
     .grid-2, .flex-row { 
         grid-template-columns: 1fr;
         flex-direction: column; 
     }
     
-    .cta-box { padding: 40px; }
+    /* --- OTIMIZAÇÃO DAS SEÇÕES "CAMINHOS" E "DESCANSO" NO MOBILE --- */
+    .cta-box { 
+        padding: 20px 20px; /* Reduzi de 40px para 20px */
+        text-align: center; /* Centraliza tudo no mobile */
+    }
+
+    .cta-box h3 {
+        font-size: 1.5rem; /* Diminui o tamanho do título */
+        margin: 10px 0;
+    }
+
+    .cta-box p {
+        font-size: 0.9rem; /* Texto um pouco menor */
+        margin-bottom: 10px;
+    }
+
+    .cta-box .icon-md {
+        width: 36px; /* Ícone menor */
+        height: 36px;
+    }
 
     .master-logo { height: 40px; }
     .sponsor-label { font-size: 1rem; }
@@ -663,7 +708,6 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         gap: 15px; /* Espaço menor entre os cards */
     }
 
-    /* Ajustes para os cards caberem bem em 2 colunas */
     .rock-img-box {
         height: 140px; /* Imagem um pouco mais baixa */
     }
@@ -685,6 +729,29 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
     .rock-time {
         font-size: 0.9rem;
         padding: 2px 10px;
+    }
+
+    /* --- CORREÇÃO ROTA CULTURAL NO MOBILE (MUDANÇA SOLICITADA) --- */
+    /* Centraliza o texto "RODE PELA HISTÓRIA" e os parágrafos */
+    #rota .flex-row {
+        text-align: center;
+    }
+    
+    /* Diminui e estiliza a imagem da Rota para ficar estilo "Foto Polaróide" */
+    #rota .rota {
+        width: 80%; /* Reduz a largura para não ocupar a tela toda */
+        max-width: 250px; /* Limite máximo */
+        margin: 30px auto 0; /* Centraliza horizontalmente e dá espaço */
+        
+        /* Efeito visual interessante: Borda branca e leve inclinação */
+        border: 10px solid white;
+        transform: rotate(-3deg);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        border-radius: 4px;
+    }
+    
+    #rota .rota img {
+        border-radius: 0; /* Remove arredondamento interno para parecer foto */
     }
 
     /* --- CORREÇÃO DO FORMULÁRIO --- */
