@@ -525,7 +525,7 @@ body {
     display: block;
     width: auto;
     max-width: 100%;
-    filter: grayscale(100%) opacity(0.7);
+    /*filter: grayscale(100%) opacity(0.7);*/
     transition: all 0.3s ease;
 }
 .sponsor-item:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); border-color: #444; }
@@ -796,3 +796,4 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         border-radius: 30px !important;
     }
 }
+
