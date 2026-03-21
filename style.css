@@ -437,12 +437,10 @@ body {
     background: rgba(255,255,255,0.05);
     border: 1px solid #333;
     padding: 40px;
-    transform: rotate(2deg);
 }
 
 /* CLASSE ROTA (Abaulada com Vinheta) */
 .rota {
-    position: relative;
     display: inline-block;
     border-radius: 30px;
     overflow: hidden;
@@ -745,7 +743,6 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         
         /* Efeito visual interessante: Borda branca e leve inclinação */
         border: 10px solid white;
-        transform: rotate(-3deg);
         box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         border-radius: 4px;
     }
@@ -796,4 +793,3 @@ footer { background: black; padding: 40px; text-align: center; border-top: 1px s
         border-radius: 30px !important;
     }
 }
-
